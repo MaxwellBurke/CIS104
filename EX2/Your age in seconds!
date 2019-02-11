@@ -1,18 +1,11 @@
 integer birthMonth
 integer birthYear
-
-integer seconds
-
+integer z
+Put "How old are you in seconds\n" to output 
 birthMonth = Get next input
-birthMonth = birthMonth * 30 * 24 * 60 * 60
-
 birthYear = Get next input
-birthYear = 2019 - birthYear * 365 * 24 * 60 * 60
-
-seconds = Get next input
-seconds = birthMonth + birthYear
-
+z = birthMonth*262800 + birthYear*3154000
 Put "Your age is " to output
-Put seconds to output
+Put z to output
 Put " seconds!" to output
 // Your solution goes here
