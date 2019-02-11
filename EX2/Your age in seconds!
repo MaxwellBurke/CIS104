@@ -1,0 +1,11 @@
+integer birthMonth
+integer birthYear
+integer z
+Put "How old are you in seconds?\n" to output 
+birthMonth = Get next input
+birthYear = Get next input
+z = birthMonth*262800 + (2019 - birthYear)*3154000
+Put "Your age is " to output
+Put z to output
+Put " seconds!" to output
+// Your solution goes here
