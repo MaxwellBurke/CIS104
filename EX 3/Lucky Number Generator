@@ -1,1 +1,5 @@
-
+birthAge = int(input("What is your age? "))
+birthDay = int(input("What day of the month where you born on? "))
+import math
+luckyNumber = math.sqrt(birthAge * birthDay) 
+print('Your lucky number is',luckyNumber, end='')
