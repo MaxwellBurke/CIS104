@@ -1,0 +1,16 @@
+print("Use this tool to figure out what U.S. president is on your bill.")
+bankNote = (int(input('\nWhat is the monetary value of the bill? $')))
+if bankNote == 1:
+    print("\nThat president is George Washington.")
+elif bankNote == 5:
+    print("\nThat president is Abraham Lincoln.")
+elif bankNote == 10:
+    print("\nThat president is Alexander Hamilton.")
+elif bankNote == 20:
+    print("\nThat president is Andrew Jackson")
+elif bankNote == 50:
+    print("\nThat president is Ulysses S. Grant")
+elif bankNote == 100:
+    print("\nThat president is Benjamin Franklin")
+else:
+    print("\nThat is not a valid form of U.S. currency")
