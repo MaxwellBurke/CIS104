@@ -1,0 +1,9 @@
+size = 10
+i = 0
+integerNumber = []
+
+while i < size:
+    integerNumber.append(int(input("Enter 10 integers and the program will reverse the order for you: ")))
+    i = i + 1
+integerNumber.reverse()
+print(integerNumber)
