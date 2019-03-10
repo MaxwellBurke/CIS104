@@ -1,0 +1,16 @@
+#Read integers from the keyboard until zero is read, storing them in input order in an array A.
+#Then copy them to another array B doubling each integer (i.e. after the
+#copying of n integers and assuming you are using item 0 of the arrays,
+#then for all i such that 0 <= i < n,  B[i] = A[i]*2 ). Then print B. 
+
+size = 10
+i = 0
+integerNumberA = []
+
+while i < size:
+    integerNumberA.append(int(input("Enter a series of 10 integers and this will double every value in a new list: ")))
+    i = i + 1
+
+integerNumberB = integerNumberA
+integerNumberB = [i * 2 for i in integerNumberB]
+print(integerNumberB)
