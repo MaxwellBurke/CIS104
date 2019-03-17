@@ -1,0 +1,14 @@
+print("The purpose of this program is to find the product of a series of inputs: ")
+def userList():
+    inputProduct = 1
+    for x in inputProductList:
+        inputProduct = inputProduct * x
+    return inputProduct
+
+i = 1
+inputProductList = []
+while i !=0:
+    i = int(input("\nInput several numbers to find their product. Input 0 to stop the program and find your product: "))
+    if i != 0:
+        inputProductList.append(i)
+print("\nThe product of the values inputed is: ", userList())
