@@ -1,0 +1,90 @@
+def fightSequence(userH,userA,userD,monsterH):
+    import random
+    while userH > 0 and monsterH > 0:
+        print("\n\nYour health is",userH,"The enemy's health is",monsterH)
+        decisionFS = int(input("Will you Attack(1) or Defend(2)? "))
+        if decisionFS == 1:
+            monsterH = monsterH - userA
+            userH = userH - random.randint(0, 4) 
+        if decisionFS == 2:
+            damage = (userD - random.randint(0,4))
+            if damage < 0:
+                userH = userH + damage
+    return(userH)
+print("Welcome to Mud\n")
+print("Mud is a text based adventure where you stave off the evils of the world\nin order to pave your destiny!\n")
+decisionOne = int(input("You are hanging upside down in a dungeon. Do you:\n\n1. Swing to the cell door\n2. Wait it out\n3. Get the guards attention\n4. Climb to the top and unhook the rope\n"))
+if decisionOne == 1:
+    print("You hit your head against the cell door and knock yourself out.\nGame Over ")
+if decisionOne == 2:
+    print("The guards take you to the interrogation room where your remains unknown to this day...")
+if decisionOne == 3:
+    print(":The agitated guards beat you senseless.\nYou are too weak to stage another escape.\nGame Over")
+if decisionOne == 4:
+    print("You are able to unhook yourself but fall quickly to the groun.\nYou shatter your arm in the process but manage to leave your cell.")
+    print("\n\nYou pass by a prisoner chained to a wall.\nHe asks you to reposition the chains chafing his legs.\nDoing this will likely draw attention from the guards.\n")
+    decisionTwoB = int(input("Will you:\n1. Help him\n2. Continue on\n"))
+    if decisionTwoB == 1:
+        print("The man blesses you and hands you a lucky coin.\nYou scurry off before the guards can appear.\n")
+        print("You find a stone staircase and traverse upwards.\nYou find yourself in a lavish castle during a ball.\nYou're going to have to wade through a sea of bodies in order to escape\n")
+        print("You find a nearby closet and jump in.\n")
+        decisionThreeB = int(input("There are several potential disguises at your disposal. Will you:\n\n1. Dress up as a wounded soldier\n2. Dress up as a wounded chef\n3. Dress up as an old sea captain\n4. Go naked\n"))
+        if decisionThreeB == 1:
+            print("You head out dressed up as a wounded soldier.\nWhile looking for an exit you bump into an esteemed general.\nHe asks you how the war is.\n")
+            decisionFourB = int(input("Will you respond with:\n1. It was a horrendous experience\nThe screams of the dead will forever resonate within my very being.\nThis pain is far more than physical.\nThe countless nights in existential horror rivet my soul.\nMay god have mercy on me.\n\n2. Fun"))
+            if decisionFourB == 1:
+                print("The general responds 'How dare you! I challenge you to a duel!'\n")
+                print("The general pulls out two rapiers and throws one to you.\n The fight begins!\n\n")
+                print(fightSequence(25,5,3,40))
+                if userH > 0:
+                    print("You victoriously defeat the general.\nThe crowd looks at you in awe as they part for you to leave.\n You walk outside wondering what to do next with your life.\n Victory!")
+                if userH < 0:
+                    print("The general makes a swift victory and plunges the sword in your chest.\nYou die in a pool of your own blood.")
+            if decisionFourB == 2:
+                print("The general responds 'How dare you! I challenge you to a duel!'")
+                print("The general pulls out two rapiers and throws one to you.\n The fight begins!\n\n")
+                print(fightSequence(25,5,3,40))
+                if userH > 0:
+                    print("You victoriously defeat the general.\nThe crowd looks at you in awe as they part for you to leave.\n You walk outside wondering what to do next with your life.\n Victory!")
+                if userH < 0:
+                    print("The general makes a swift victory and plunges the sword in your chest.\nYou die in a pool of your own blood.")   
+        if decisionThreeB == 2:
+            print("Apparently the real chef had cooked a horrible Lapin A La Cocotte Strew.\nYou are beaten to death by the partygoers.\nGame Over")
+        if decisionThreeB == 3:
+            print("The sea captain costume resembled the leader of a neighboring enemy army.\nYou are promptly clubbed to death by partygoers.\nGame Over")
+        if decisionThreeB == 4:
+            print("The shocked crowd backs away from you.\nThe room was silent for several moments before a general demanded identification\n\n")
+            if decisionTwoB == 1:
+                print("You remember the coin that you kept hidden in THE PALM OF YOUR HAND.\nOn the coin is the symbol for the god of depravity.\n Everyone in the ball dances in joy and you are worshipped for the rest of your days.")
+            if decisionTwoB != 1:
+                print("You have no way to prove any form of identification.\nYou are hung by your toenails in the dungeon.\nGame Over")
+    if decisionTwoB == 2:
+         print("You head out dressed up as a wounded soldier.\nWhile looking for an exit you bump into an esteemed general.\nHe asks you how the war is.\n")
+         decisionFourB = int(input("Will you respond with:\n1. It was a horrendous experience\nThe screams of the dead will forever resonate within my very being.\nThis pain is far more than physical.\nThe countless nights in existential horror rivet my soul.\nMay god have mercy on me.\n\n2. Fun"))
+         if decisionFourB == 1:
+                print("The general responds 'How dare you! I challenge you to a duel!'\n")
+                print("The general pulls out two rapiers and throws one to you.\n The fight begins!\n\n")
+                print(fightSequence(25,5,3,40))
+                if userH > 0:
+                    print("You victoriously defeat the general.\nThe crowd looks at you in awe as they part for you to leave.\n You walk outside wondering what to do next with your life.\n Victory!")
+                if userH < 0:
+                    print("The general makes a swift victory and plunges the sword in your chest.\nYou die in a pool of your own blood.")
+         if decisionFourB == 2:
+                print("The general responds 'How dare you! I challenge you to a duel!'")
+                print("The general pulls out two rapiers and throws one to you.\n The fight begins!\n\n")
+                print(fightSequence(25,5,3,40))
+                if userH > 0:
+                    print("You victoriously defeat the general.\nThe crowd looks at you in awe as they part for you to leave.\n You walk outside wondering what to do next with your life.\n Victory!")
+                if userH < 0:
+                    print("The general makes a swift victory and plunges the sword in your chest.\nYou die in a pool of your own blood.")   
+    if decisionThreeB == 2:
+            print("Apparently the real chef had cooked a horrible Lapin A La Cocotte Strew.\nYou are beaten to death by the partygoers.\nGame Over")
+    if decisionThreeB == 3:
+            print("The sea captain costume resembled the leader of a neighboring enemy army.\nYou are promptly clubbed to death by partygoers.\nGame Over")
+    if decisionThreeB == 4:
+            print("The shocked crowd backs away from you.\nThe room was silent for several moments before a general demanded identification\n\n")
+            if decisionTwoB == 1:
+                print("You remember the coin that you kept hidden in THE PALM OF YOUR HAND.\nOn the coin is the symbol for the god of depravity.\n Everyone in the ball dances in joy and you are worshipped for the rest of your days.")
+            if decisionTwoB != 1:
+                print("You have no way to prove any form of identification.\nYou are hung by your toenails in the dungeon.\nGame Over")
+
