@@ -13,7 +13,6 @@ def fightSequence(userH,userA,userD,monsterH):
     return userH
 
 print("Welcome to Mud\n\n")
-userH = 0
 decisionOne = int(input("You are hanging upside down in a dungeon. Do you:\n\n1. Swing to the cell door to try
 and cut the rope\n2. Wait it out\n3. Get the guards attention\n4. Unhook the rope\n"))
 if decisionOne == 1:
