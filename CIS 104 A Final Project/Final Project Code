@@ -1,0 +1,125 @@
+#Purpose of the function is to have a battle between the player and a monster
+#Four variables are controlled userH(user health), userA(user attack), userD(user defense), monsterH(monster health)
+def fightSequence(userH,userA,userD,monsterH):
+    import random
+    while userH > 0 and monsterH > 0:
+        print("\n\nYour health is",userH,"The enemy's health is",monsterH,"\nYour attack is",userA,"Your defense is",userD,)
+        decisionFS = int(input("Will you Attack(1) or Defend(2)?\n\n"))
+        if decisionFS == 1:
+            monsterH = monsterH - userA
+            userH = userH - random.randint(0, 4) 
+        if decisionFS == 2:
+            damage = (userD - random.randint(0,4))
+            #The bottom if statement ensures that damage is only added to health if it's a negative value
+            if damage < 0:
+                userH = userH + damage
+    return userH
+
+print("Welcome to Mud\n\n")
+decisionOne = int(input("You are hanging upside down in a dungeon. Do you:\n\n1. Swing to the cell door to tryand cut the rope\n2. Wait it out\n3. Get the guards attention\n4. Unhook the rope\n"))
+if decisionOne == 1:
+    print("\nYou swing yourself violently enough that you manage to hold onto the cell door.\nThe guards had a dagger tucked away which you use to cut yourself down.")
+    print("\n\nYou hear the guards hollering down the dank corridor.\n In the distance to your left you see stairs.\n In front of you, you see what appears to be a eerie cavern.\nWhat will you do?")
+    decisionTwo = int(input("\n\nWill you:\n1.Take the stairs\n2. Leap into the cavern"))
+    if decisionTwo == 1:
+        print("\n\nYou easily outrun the guards behind you but you run into a sentry guarding the stairs.\n You are sent to the interrogation room where your fate remains unkown.")
+    if decisionTwo == 2:
+        print("\n\nYou leap into the cavern and fall down a rocky slope.")
+        print("\n\nYou see a torch in the distance. What will you do?")
+        decisionThree = int(input("\n\nWill you:\n1. Approach the torch\n2. Stay in the shadows"))
+        if decisionThree == 1:
+            print("You feel the warm breath of a large beast on the back of your neck.\nIt beats you to death.")
+        if decisionThree == 2:
+            print("\n\nYou stay in the shadows and watch for a bit.\nAfter several moments you see a mouse traverse across the floor.\nA huge figure runs and eats it.")
+            decisionFour = int(input("You see the glimmer of a sword to your left. Grabbing it will make noise.\nWill you\n1. Grab it\n2. Stay put"))
+            if decisionFour == 1:
+                print("\n\nThe beast immediately lunges out of the shadows and beats you to death.")
+            if decisionFour == 2:
+                print("\n\nYou trust your instincts and decide to stay put.")
+                decisionFive = int(input("You begin to creep away but you feel something breathing behind you.\nWill you:\n1. Run for the sword\n2. Run for the edge of the cavern"))
+                if decisionFive == 1:
+                    print("You sprint and manage to pick up your sword. Unfortunately it looks like you're going to have to fight the beast.")
+                    #Created a variable which will hold the value returned from the function
+                    fightSequenceOne = fightSequence(30,4,3,45)
+                    if fightSequenceOne > 0:
+                        print("You successfully defeat the beast!\nYou pick up the torch and manage to find an exit deeper in the cavern.\nYou win!")
+                    if fightSequenceOne < 0:
+                        print("The beast manages to beat you.\nIt beats you to death.")
+                if decisionFive == 2:
+                    print("You decide to make a run for it.\nRunning at max speed you feel the energy surging through your body.\nYou are so close\nIf you can make this then you'll just have to lure the beast into the guards\nYou are almost to the edge of the cavern\nYou begin climbing up -\nThe beast catches you and beats you to death.")
+if decisionOne == 2:
+    print("\nThe guards take you to the interrogation room where your fate remains unknown.")
+if decisionOne == 3:
+    print("\nThe annoyed guards beat you up. You no longer have the strenth to escape.")
+if decisionOne == 4:
+    print("\nYou unhook yourself but you shatter your arm landing on the ground.\nYou leave your cell.")
+    print("You pass by a prisoner chained to a wall. He asks you to adjust the chains that are chafing him.\nDoing this will likely draw attention from the guards.")
+    decisionTwoB = int(input("\n\nWill you:\n1. Help him\n2. Continue on"))
+    if decisionTwoB == 1:
+        print("\n\nThe man blesses you and hands you a lucky coin. You scurry of before the guars appear.")
+        luckyCoin = 1
+        print("\n\nYou find a staircase and find yourself upstairs in a lavish ballroom.\nIf you hope to escape you're going to have to wade through all the people.")
+        print("\n\nYou run off into a closet. There are clothes and you figure you can make a disguise.")
+        decisionThreeB = int(input("\n\nWill you:\n1. Dress up as a wounded soldier\n2. Dress up as a wounded chef\n3. Dress up as an old sea captain\n4. Go naked\n"))
+        if decisionThreeB == 1:
+            print("\n\nYou wonder on before meeting a general. He asks you how the war was.")
+            decisionFourB = int(input("Will you say:\n1. Good\n2. Bad"))
+            if decisionFourB == 1:
+                print("\n\nThe general yells: 'How dare you!' and challenges you to a duel")
+                print(fightSequence(25,5,3,40))
+                if userH > 0:
+                    print("You defeat the captain and leave the castle triumphantly.\nYou win!")
+                if userH < 0:
+                    print("The captain defeats you.\nYour corpse is then beaten to death.")
+            if decisionFourB == 2:
+                print("\n\nThe general yells: 'How dare you!' and challenges you to a duel")
+                fightSequenceOne = fightSequence(25,5,3,40)
+                if fightSequenceOne > 0:
+                    print("You defeat the captain and leave the castle triumphantly.\nYou win!")
+                if fightSequenceOne < 0:
+                    print("The captain defeats you.\nYour corpse is then beaten to death.")
+        if decisionThreeB == 2:
+            print("\n\nApparently the real chef made awful Lapin A La Cocotte Stew.\nYou are beaten to death.")
+        if decisionThreeB == 3:
+            print("\n\nApparently you dressed up as an enemy captain.\nYou are beaten to death.")
+        if decisionThreeB == 4:
+            print("You decide to go naked and the whole crowd is in shock. A man in the crowd demands identification.")
+            if luckyCoin == 1:
+                print("\n\nYou hand over the coin that you kept in the PALM OF YOUR HAND.\nOn the coin is a depiction of the god of depravity.\nYou are worshipped for the rest of your days.")
+            if luckyCoin != 1:
+                print("\n\nYou have no identification to provide.\nYou are beaten to death.")
+    if decisionTwoB == 2:
+        print("\n\nThe man hangs his head. You continue on and ignore his cries")
+        luckyCoin = 2
+        print("\n\nYou find a staircase and find yourself upstairs in a lavish ballroom.\nIf you hope to escape you're going to have to wade through all the people.")
+        print("\n\nYou run off into a closet. There are clothes and you figure you can make a disguise.")
+        decisionThreeB = int(input("\n\nWill you:\n1. Dress up as a wounded soldier\n2. Dress up as a wounded chef\n3. Dress up as an old sea captain\n4. Go naked\n"))
+        if decisionThreeB == 1:
+            print("\n\nYou wonder on before meeting a general. He asks you how the war was.")
+            decisionFourB = int(input("Will you say:\n1. Good\n2. Bad"))
+            if decisionFourB == 1:
+                print("\n\nThe general yells: 'How dare you!' and challenges you to a duel")
+                print(fightSequence(25,5,3,40))
+                if userH > 0:
+                    print("You defeat the captain and leave the castle triumphantly.\nYou win!")
+                if userH < 0:
+                    print("The captain defeats you.\nYour corpse is then beaten to death.")
+            if decisionFourB == 2:
+                print("\n\nThe general yells: 'How dare you!' and challenges you to a duel")
+                fightSequenceOne = fightSequence(25,5,3,40)
+                if fightSequenceOne > 0:
+                    print("You defeat the captain and leave the castle triumphantly.\nYou win!")
+                if fightSequenceOne < 0:
+                    print("The captain defeats you.\nYour corpse is then beaten to death.")
+        if decisionThreeB == 2:
+            print("\n\nApparently the real chef made awful Lapin A La Cocotte Stew.\nYou are beaten to death.")
+        if decisionThreeB == 3:
+            print("\n\nApparently you dressed up as an enemy captain.\nYou are beaten to death.")
+        if decisionThreeB == 4:
+            print("You decide to go naked and the whole crowd is in shock. A man in the crowd demands identification.")
+            if luckyCoin == 1:
+                print("\n\nYou hand over the coin that you kept in the PALM OF YOUR HAND.\nOn the coin is a depiction of the god of depravity.\nYou are worshipped for the rest of your days.")
+            if luckyCoin != 1:
+                print("\n\nYou have no identification to provide.\nYou are beaten to death.")
+        
+
